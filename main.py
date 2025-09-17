@@ -58,7 +58,7 @@ Make sure:
 - Title is concise and engaging
 - Description includes specific activities and timing
 - Location mentions specific areas/neighborhoods
-- Return valid JSON only, no extra text"""),
+- Return valid JSON only, no extra text""",), 
     ("human", "Create a {duration}-day itinerary for {city} focusing on {interests}"),
 ])
 
@@ -190,6 +190,7 @@ def plan_trip(trip_request: TripRequest):
         result = travel_planner(trip_request.request, trip_request.city, interests_list, trip_request.duration)
         return {"message": "Trip planning completed", "itinerary": result}
     except Exception as e:
+        print(e)
         raise HTTPException(status_code=500, detail="Failed to generate trip plan")
 
 if __name__ == "__main__":
