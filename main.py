@@ -75,7 +75,7 @@ def set_interests(state: PlannerState) -> PlannerState:
     }
 
 def create_itinerary(state: PlannerState) -> PlannerState:
-    print(f"Creating a {state['duration']}-day itinerary for {state['city']} based on interests: {', '.join(state['interests'])}")
+    print(f"Creating a {state['duration']}-day itinerary for {state['city']} based on interests: {', '.join(state['interests'])} and itineray should be planned for whole day time wise")
     
     response = llm.invoke(itinerary_prompt.format_messages(
         city=state['city'], 
