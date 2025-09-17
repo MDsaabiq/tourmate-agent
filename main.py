@@ -27,11 +27,11 @@ class PlannerState(TypedDict):
     duration: int
     itinerary: List[dict]
 
-from langchain_groq import ChatGroq
-llm = ChatGroq(
+from langchain_google_genai import ChatGoogleGenerativeAI
+llm = ChatGoogleGenerativeAI(
     temperature=0,
-    groq_api_key=os.getenv("GROQ_API_KEY"),
-    model_name="llama-3.3-70b-versatile"
+    google_api_key=os.getenv("GOOGLE_API_KEY"),
+    model="gemini-pro"
 )
 
 itinerary_prompt = ChatPromptTemplate.from_messages([
@@ -92,7 +92,7 @@ def create_itinerary(state: PlannerState) -> PlannerState:
         content = response.content.strip()
         
         # Try to find JSON array in the response
-        json_match = re.search(r'\[.*\]', content, re.DOTALL)
+        json_match = re.search(r'[[.*]]', content, re.DOTALL)
         if json_match:
             json_str = json_match.group()
             itinerary_data = json.loads(json_str)
@@ -195,7 +195,7 @@ def plan_trip(trip_request: TripRequest):
 
 if __name__ == "__main__":
     import uvicorn
-    port = int(os.environ.get("PORT", 8000))
+    port = int(os.environ.get("PORT", 8881))
     uvicorn.run("main:app", host="0.0.0.0", port=port)
 
 
