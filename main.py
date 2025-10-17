@@ -35,31 +35,48 @@ llm = ChatGoogleGenerativeAI(
 )
 
 itinerary_prompt = ChatPromptTemplate.from_messages([
-    ("system", """You are a helpful travel assistant. Create a {duration}-day trip itinerary for {city} based on the user's interests: {interests}. 
-    in discription give time to time schedule for user in considering all situation
-IMPORTANT: Return ONLY a valid JSON array with this exact structure:
+    ("system", """You are an expert travel guide. Create a realistic and enjoyable {duration}-day itinerary for {city} for travelers interested in {interests}.
+
+CRITICAL: Each day MUST be COMPLETELY DIFFERENT with unique locations, attractions, and activities. Do NOT repeat the same places or activities across different days.
+
+For EACH day:
+1. Focus on a DIFFERENT neighborhood, district, or area of {city}
+2. Provide specific attractions, museums, parks, restaurants unique to that area
+3. Create a time-based schedule for the ENTIRE day
+4. Mix famous sites with local hidden gems
+
+Day-by-Day Structure:
+- Day 1: Explore [First distinct area] focusing on [specific interest]
+- Day 2: Visit [Different distinct area] focusing on [different aspect]
+- Day 3: Discover [Another distinct area] with [different activities]
+(Continue pattern - each day in a NEW location/neighborhood)
+
+IMPORTANT - Return ONLY valid JSON with NO extra text:
 [
   {{
     "day": 1,
-    "title": "Day title",
-    "description": "Detailed description of activities",
-    "location": "Specific location/area"
+    "title": "Day 1 - [Area Name] - [Catchy title about unique experience]",
+    "description": "8:00 AM - Start at [specific landmark in Area 1]\n10:00 AM - Visit [unique museum/attraction in Area 1]\n12:30 PM - Lunch at [local restaurant in Area 1]\n3:00 PM - Explore [neighborhood/park in Area 1]\n6:00 PM - [Evening activity in Area 1]\n8:00 PM - Dinner at [restaurant in Area 1]",
+    "location": "[Specific area name/neighborhood - NOT the city]"
   }},
   {{
     "day": 2,
-    "title": "Day title", 
-    "description": "Detailed description of activities",
-    "location": "Specific location/area"
+    "title": "Day 2 - [Different Area Name] - [Different experience title]",
+    "description": "8:00 AM - Begin at [unique starting point in Area 2]\n10:00 AM - Visit [different type of attraction in Area 2]\n12:30 PM - Lunch at [different restaurant in Area 2]\n3:00 PM - Explore [different neighborhood/site in Area 2]\n6:00 PM - [Different evening activity in Area 2]\n8:00 PM - Dinner at [different restaurant type in Area 2]",
+    "location": "[Completely different area/neighborhood - NOT same as Day 1]"
   }}
 ]
 
-Make sure:
-- Each day has a unique day number (1, 2, 3, etc.)
-- Title is concise and engaging
-- Description includes specific activities and timing
-- Location mentions specific areas/neighborhoods
-- Return valid JSON only, no extra text""",), 
-    ("human", "Create a {duration}-day itinerary for {city} focusing on {interests}"),
+Critical Guidelines:
+- VARIATION: No day should visit the same location, restaurant, or neighborhood as another day
+- Use specific, real place names for EACH location (research {city} geography)
+- Each day focuses on a DIFFERENT neighborhood or district
+- Include realistic HH:MM AM/PM times for all activities
+- Activities MUST align with {interests} but vary across days
+- Separate activities with line breaks (\n)
+- Make it practical and balanced (not exhausting)
+- Return ONLY the JSON array, nothing else""",),
+    ("human", "Create a {duration}-day itinerary for {city} for someone interested in {interests}. Make sure each day visits completely different areas and neighborhoods with unique activities."),
 ])
 
 def set_city(state: PlannerState) -> PlannerState:
