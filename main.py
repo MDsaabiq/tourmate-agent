@@ -31,7 +31,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 llm = ChatGoogleGenerativeAI(
     temperature=0,
     google_api_key=os.getenv("GOOGLE_API_KEY"),
-    model="gemini-pro"
+    model="gemini-2.5-flash"
 )
 
 itinerary_prompt = ChatPromptTemplate.from_messages([

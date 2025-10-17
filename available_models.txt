@@ -1,0 +1,280 @@
+Available Gemini Models
+==================================================
+
+Total models available: 50
+
+1. Model: models/embedding-gecko-001
+   Display Name: Embedding Gecko
+   Description: Obtain a distributed representation of a text.
+   Input Token Limit: 1024
+   Output Token Limit: 1
+
+2. Model: models/gemini-2.5-pro-preview-03-25
+   Display Name: Gemini 2.5 Pro Preview 03-25
+   Description: Gemini 2.5 Pro Preview 03-25
+   Input Token Limit: 1048576
+   Output Token Limit: 65536
+
+3. Model: models/gemini-2.5-flash-preview-05-20
+   Display Name: Gemini 2.5 Flash Preview 05-20
+   Description: Preview release (April 17th, 2025) of Gemini 2.5 Flash
+   Input Token Limit: 1048576
+   Output Token Limit: 65536
+
+4. Model: models/gemini-2.5-flash
+   Display Name: Gemini 2.5 Flash
+   Description: Stable version of Gemini 2.5 Flash, our mid-size multimodal model
+   Input Token Limit: 1048576
+   Output Token Limit: 65536
+
+5. Model: models/gemini-2.5-flash-lite-preview-06-17
+   Display Name: Gemini 2.5 Flash-Lite Preview 06-17
+   Description: Preview release (June 11th, 2025) of Gemini 2.5 Flash-Lite
+   Input Token Limit: 1048576
+   Output Token Limit: 65536
+
+6. Model: models/gemini-2.5-pro-preview-05-06
+   Display Name: Gemini 2.5 Pro Preview 05-06
+   Description: Preview release (May 6th, 2025) of Gemini 2.5 Pro
+   Input Token Limit: 1048576
+   Output Token Limit: 65536
+
+7. Model: models/gemini-2.5-pro-preview-06-05
+   Display Name: Gemini 2.5 Pro Preview
+   Description: Preview release (June 5th, 2025) of Gemini 2.5 Pro
+   Input Token Limit: 1048576
+   Output Token Limit: 65536
+
+8. Model: models/gemini-2.5-pro
+   Display Name: Gemini 2.5 Pro
+   Description: Stable release (June 17th, 2025) of Gemini 2.5 Pro
+   Input Token Limit: 1048576
+   Output Token Limit: 65536
+
+9. Model: models/gemini-2.0-flash-exp
+   Display Name: Gemini 2.0 Flash Experimental
+   Description: Gemini 2.0 Flash Experimental
+   Input Token Limit: 1048576
+   Output Token Limit: 8192
+
+10. Model: models/gemini-2.0-flash
+    Display Name: Gemini 2.0 Flash
+    Description: Gemini 2.0 Flash
+    Input Token Limit: 1048576
+    Output Token Limit: 8192
+
+11. Model: models/gemini-2.0-flash-001
+    Display Name: Gemini 2.0 Flash 001
+    Description: Stable version of Gemini 2.0 Flash, released in January 2025
+    Input Token Limit: 1048576
+    Output Token Limit: 8192
+
+12. Model: models/gemini-2.0-flash-exp-image-generation
+    Display Name: Gemini 2.0 Flash (Image Generation) Experimental
+    Input Token Limit: 1048576
+    Output Token Limit: 8192
+
+13. Model: models/gemini-2.0-flash-lite-001
+    Display Name: Gemini 2.0 Flash-Lite 001
+    Description: Stable version of Gemini 2.0 Flash-Lite
+    Input Token Limit: 1048576
+    Output Token Limit: 8192
+
+14. Model: models/gemini-2.0-flash-lite
+    Display Name: Gemini 2.0 Flash-Lite
+    Input Token Limit: 1048576
+    Output Token Limit: 8192
+
+15. Model: models/gemini-2.0-flash-preview-image-generation
+    Display Name: Gemini 2.0 Flash Preview Image Generation
+    Input Token Limit: 32768
+    Output Token Limit: 8192
+
+16. Model: models/gemini-2.0-flash-lite-preview-02-05
+    Display Name: Gemini 2.0 Flash-Lite Preview 02-05
+    Input Token Limit: 1048576
+    Output Token Limit: 8192
+
+17. Model: models/gemini-2.0-flash-lite-preview
+    Display Name: Gemini 2.0 Flash-Lite Preview
+    Input Token Limit: 1048576
+    Output Token Limit: 8192
+
+18. Model: models/gemini-2.0-pro-exp
+    Display Name: Gemini 2.0 Pro Experimental
+    Input Token Limit: 1048576
+    Output Token Limit: 65536
+
+19. Model: models/gemini-2.0-pro-exp-02-05
+    Display Name: Gemini 2.0 Pro Experimental 02-05
+    Input Token Limit: 1048576
+    Output Token Limit: 65536
+
+20. Model: models/gemini-exp-1206
+    Display Name: Gemini Experimental 1206
+    Input Token Limit: 1048576
+    Output Token Limit: 65536
+
+21. Model: models/gemini-2.0-flash-thinking-exp-01-21
+    Display Name: Gemini 2.5 Flash Preview 05-20
+    Input Token Limit: 1048576
+    Output Token Limit: 65536
+
+22. Model: models/gemini-2.0-flash-thinking-exp
+    Display Name: Gemini 2.5 Flash Preview 05-20
+    Input Token Limit: 1048576
+    Output Token Limit: 65536
+
+23. Model: models/gemini-2.0-flash-thinking-exp-1219
+    Display Name: Gemini 2.5 Flash Preview 05-20
+    Input Token Limit: 1048576
+    Output Token Limit: 65536
+
+24. Model: models/gemini-2.5-flash-preview-tts
+    Display Name: Gemini 2.5 Flash Preview TTS
+    Input Token Limit: 8192
+    Output Token Limit: 16384
+
+25. Model: models/gemini-2.5-pro-preview-tts
+    Display Name: Gemini 2.5 Pro Preview TTS
+    Input Token Limit: 8192
+    Output Token Limit: 16384
+
+26. Model: models/learnlm-2.0-flash-experimental
+    Display Name: LearnLM 2.0 Flash Experimental
+    Input Token Limit: 1048576
+    Output Token Limit: 32768
+
+27. Model: models/gemma-3-1b-it
+    Display Name: Gemma 3 1B
+    Input Token Limit: 32768
+    Output Token Limit: 8192
+
+28. Model: models/gemma-3-4b-it
+    Display Name: Gemma 3 4B
+    Input Token Limit: 32768
+    Output Token Limit: 8192
+
+29. Model: models/gemma-3-12b-it
+    Display Name: Gemma 3 12B
+    Input Token Limit: 32768
+    Output Token Limit: 8192
+
+30. Model: models/gemma-3-27b-it
+    Display Name: Gemma 3 27B
+    Input Token Limit: 131072
+    Output Token Limit: 8192
+
+31. Model: models/gemma-3n-e4b-it
+    Display Name: Gemma 3n E4B
+    Input Token Limit: 8192
+    Output Token Limit: 2048
+
+32. Model: models/gemma-3n-e2b-it
+    Display Name: Gemma 3n E2B
+    Input Token Limit: 8192
+    Output Token Limit: 2048
+
+33. Model: models/gemini-flash-latest
+    Display Name: Gemini Flash Latest
+    Description: Latest release of Gemini Flash
+    Input Token Limit: 1048576
+    Output Token Limit: 65536
+
+34. Model: models/gemini-flash-lite-latest
+    Display Name: Gemini Flash-Lite Latest
+    Description: Latest release of Gemini Flash-Lite
+    Input Token Limit: 1048576
+    Output Token Limit: 65536
+
+35. Model: models/gemini-pro-latest
+    Display Name: Gemini Pro Latest
+    Description: Latest release of Gemini Pro
+    Input Token Limit: 1048576
+    Output Token Limit: 65536
+
+36. Model: models/gemini-2.5-flash-lite
+    Display Name: Gemini 2.5 Flash-Lite
+    Description: Stable version of Gemini 2.5 Flash-Lite, released in July 2025
+    Input Token Limit: 1048576
+    Output Token Limit: 65536
+
+37. Model: models/gemini-2.5-flash-image-preview
+    Display Name: Nano Banana
+    Description: Gemini 2.5 Flash Preview Image
+    Input Token Limit: 32768
+    Output Token Limit: 8192
+
+38. Model: models/gemini-2.5-flash-image
+    Display Name: Nano Banana
+    Description: Gemini 2.5 Flash Preview Image
+    Input Token Limit: 32768
+    Output Token Limit: 8192
+
+39. Model: models/gemini-2.5-flash-preview-09-2025
+    Display Name: Gemini 2.5 Flash Preview Sep 2025
+    Input Token Limit: 1048576
+    Output Token Limit: 65536
+
+40. Model: models/gemini-2.5-flash-lite-preview-09-2025
+    Display Name: Gemini 2.5 Flash-Lite Preview Sep 2025
+    Input Token Limit: 1048576
+    Output Token Limit: 65536
+
+41. Model: models/gemini-robotics-er-1.5-preview
+    Display Name: Gemini Robotics-ER 1.5 Preview
+    Input Token Limit: 1048576
+    Output Token Limit: 65536
+
+42. Model: models/gemini-2.5-computer-use-preview-10-2025
+    Display Name: Gemini 2.5 Computer Use Preview 10-2025
+    Input Token Limit: 131072
+    Output Token Limit: 65536
+
+43. Model: models/embedding-001
+    Display Name: Embedding 001
+    Description: Obtain a distributed representation of a text.
+    Input Token Limit: 2048
+    Output Token Limit: 1
+
+44. Model: models/text-embedding-004
+    Display Name: Text Embedding 004
+    Description: Obtain a distributed representation of a text.
+    Input Token Limit: 2048
+    Output Token Limit: 1
+
+45. Model: models/gemini-embedding-exp-03-07
+    Display Name: Gemini Embedding Experimental 03-07
+    Description: Obtain a distributed representation of a text.
+    Input Token Limit: 8192
+    Output Token Limit: 1
+
+46. Model: models/gemini-embedding-exp
+    Display Name: Gemini Embedding Experimental
+    Description: Obtain a distributed representation of a text.
+    Input Token Limit: 8192
+    Output Token Limit: 1
+
+47. Model: models/gemini-embedding-001
+    Display Name: Gemini Embedding 001
+    Description: Obtain a distributed representation of a text.
+    Input Token Limit: 2048
+    Output Token Limit: 1
+
+48. Model: models/aqa
+    Display Name: Model that performs Attributed Question Answering.
+    Description: Model trained to return answers grounded in provided sources
+    Input Token Limit: 7168
+    Output Token Limit: 1024
+
+49. Model: models/imagen-3.0-generate-002
+    Display Name: Imagen 3.0
+    Description: Vertex served Imagen 3.0 002 model
+    Input Token Limit: 480
+    Output Token Limit: 8192
+
+50. Model: models/imagen-4.0-generate-preview-06-06
+    Display Name: Imagen 4 (Preview)
+    Description: Vertex served Imagen 4.0 model
+    Input Token Limit: 480
+    Output Token Limit: 8192
