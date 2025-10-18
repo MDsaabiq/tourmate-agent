@@ -109,7 +109,7 @@ def create_itinerary(state: PlannerState) -> PlannerState:
         content = response.content.strip()
         
         # Try to find JSON array in the response
-        json_match = re.search(r'[[.*]]', content, re.DOTALL)
+        json_match = re.search(r'\[.*\]', content, re.DOTALL)
         if json_match:
             json_str = json_match.group()
             itinerary_data = json.loads(json_str)
