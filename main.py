@@ -112,9 +112,12 @@ def create_itinerary(state: PlannerState) -> PlannerState:
         json_match = re.search(r'\[.*\]', content, re.DOTALL)
         if json_match:
             json_str = json_match.group()
+            # Replace actual newlines with escaped newlines for proper JSON parsing
+            json_str = json_str.replace('\n', '\\n')
             itinerary_data = json.loads(json_str)
         else:
             # Fallback: try to parse the entire content
+            content = content.replace('\n', '\\n')
             itinerary_data = json.loads(content)
         # Validate and ensure proper structure
         validated_itinerary = []
