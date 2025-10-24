@@ -108,17 +108,29 @@ def create_itinerary(state: PlannerState) -> PlannerState:
         # Extract JSON from response
         content = response.content.strip()
         
+        print(f"DEBUG: Raw response length: {len(content)}")
+        print(f"DEBUG: First 200 chars: {content[:200]}")
+        
         # Find JSON array boundaries
         start_idx = content.find('[')
         end_idx = content.rfind(']')
         
+        print(f"DEBUG: Found brackets at {start_idx} to {end_idx}")
+        
         if start_idx != -1 and end_idx != -1 and end_idx > start_idx:
             json_str = content[start_idx:end_idx+1]
-            # Replace actual newlines with escaped newlines for JSON parsing
-            json_str = json_str.replace('\n', '\\n').replace('\r', '')
+            print(f"DEBUG: Extracted JSON length: {len(json_str)}")
+            
+            # Replace actual newlines/carriage returns with spaces inside strings
+            # This preserves existing \n escape sequences while removing problematic line breaks
+            json_str = json_str.replace('\r\n', ' ').replace('\r', ' ').replace('\n', ' ')
+            
+            print(f"DEBUG: Attempting to parse JSON...")
             itinerary_data = json.loads(json_str)
+            print(f"DEBUG: Successfully parsed {len(itinerary_data)} items")
         else:
             raise ValueError("No JSON array found in response")
+        
         # Validate and ensure proper structure
         validated_itinerary = []
         for item in itinerary_data:
@@ -130,14 +142,16 @@ def create_itinerary(state: PlannerState) -> PlannerState:
             }
             validated_itinerary.append(validated_item)
         
+        print(f"DEBUG: Validated {len(validated_itinerary)} items")
         return {
             **state,
             "messages": state['messages'] + [AIMessage(content=response.content)],
             "itinerary": validated_itinerary,
         }
         
-    except (json.JSONDecodeError, KeyError) as e:
+    except (json.JSONDecodeError, KeyError, ValueError) as e:
         print(f"Error parsing JSON: {e}")
+        print(f"DEBUG: Full response was: {response.content[:500]}")
         # Fallback itinerary
         fallback_itinerary = []
         for day in range(1, state['duration'] + 1):
