@@ -108,20 +108,17 @@ def create_itinerary(state: PlannerState) -> PlannerState:
         # Extract JSON from response
         content = response.content.strip()
         
-        # Normalize line endings and clean up newlines
-        content = content.replace('\r\n', '\n').replace('\r', '\n')
+        # Find JSON array boundaries
+        start_idx = content.find('[')
+        end_idx = content.rfind(']')
         
-        # Try to find JSON array in the response
-        json_match = re.search(r'\[.*\]', content, re.DOTALL)
-        if json_match:
-            json_str = json_match.group()
-            # Replace actual newlines with spaces (preserve \n in strings)
-            json_str = re.sub(r'"\s*\n\s*', ' ', json_str)
+        if start_idx != -1 and end_idx != -1 and end_idx > start_idx:
+            json_str = content[start_idx:end_idx+1]
+            # Replace actual newlines with escaped newlines for JSON parsing
+            json_str = json_str.replace('\n', '\\n').replace('\r', '')
             itinerary_data = json.loads(json_str)
         else:
-            # Fallback: try to parse the entire content with cleanup
-            content = re.sub(r'"\s*\n\s*', ' ', content)
-            itinerary_data = json.loads(content)
+            raise ValueError("No JSON array found in response")
         # Validate and ensure proper structure
         validated_itinerary = []
         for item in itinerary_data:
